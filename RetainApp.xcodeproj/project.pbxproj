@@ -11,6 +11,8 @@
 		22F4191D29E5C9AB00EC6057 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F4191C29E5C9AB00EC6057 /* ContentView.swift */; };
 		22F4191F29E5C9AC00EC6057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F4191E29E5C9AC00EC6057 /* Assets.xcassets */; };
 		22F4192329E5C9AC00EC6057 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F4192229E5C9AC00EC6057 /* Preview Assets.xcassets */; };
+		22F4192B29E5CB7A00EC6057 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 22F4192A29E5CB7A00EC6057 /* SwiftUINavigation */; };
+		22F4192D29E5D2A400EC6057 /* BuggedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F4192C29E5D2A400EC6057 /* BuggedContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		22F4191E29E5C9AC00EC6057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F4192029E5C9AC00EC6057 /* RetainApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RetainApp.entitlements; sourceTree = "<group>"; };
 		22F4192229E5C9AC00EC6057 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22F4192C29E5D2A400EC6057 /* BuggedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuggedContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F4192B29E5CB7A00EC6057 /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 			children = (
 				22F4191A29E5C9AB00EC6057 /* RetainAppApp.swift */,
 				22F4191C29E5C9AB00EC6057 /* ContentView.swift */,
+				22F4192C29E5D2A400EC6057 /* BuggedContentView.swift */,
 				22F4191E29E5C9AC00EC6057 /* Assets.xcassets */,
 				22F4192029E5C9AC00EC6057 /* RetainApp.entitlements */,
 				22F4192129E5C9AC00EC6057 /* Preview Content */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = RetainApp;
+			packageProductDependencies = (
+				22F4192A29E5CB7A00EC6057 /* SwiftUINavigation */,
+			);
 			productName = RetainApp;
 			productReference = 22F4191729E5C9AB00EC6057 /* RetainApp.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 22F4190E29E5C9AB00EC6057;
+			packageReferences = (
+				22F4192929E5CB7A00EC6057 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = 22F4191829E5C9AB00EC6057 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F4191D29E5C9AB00EC6057 /* ContentView.swift in Sources */,
+				22F4192D29E5D2A400EC6057 /* BuggedContentView.swift in Sources */,
 				22F4191B29E5C9AB00EC6057 /* RetainAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22F4192929E5CB7A00EC6057 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22F4192A29E5CB7A00EC6057 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22F4192929E5CB7A00EC6057 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 22F4190F29E5C9AB00EC6057 /* Project object */;
 }
