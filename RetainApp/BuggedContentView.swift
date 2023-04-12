@@ -15,7 +15,7 @@ class BuggedContentViewModel: ObservableObject {
   @Published var destination: Destination?
   
   enum Destination {
-    case sheetView(SheetViewModel)
+    case sheetView(BuggedSheetViewModel)
   }
   
   func tappedPresent() {
@@ -37,7 +37,7 @@ struct BuggedContentView: View {
     }
     .sheet(unwrapping: self.$model.destination, case: /BuggedContentViewModel.Destination.sheetView) { $model in
       NavigationView {
-        SheetView(model: model)
+        BuggedSheetView(model: model)
           .toolbar {
             ToolbarItem(placement: .cancellationAction) {
               Button("Cancel") {
@@ -52,10 +52,11 @@ struct BuggedContentView: View {
 
 @MainActor
 class BuggedSheetViewModel: ObservableObject {
-  @Published var myText = "My Text"
+  
+  @Published var myText = "Text"
   
   deinit {
-    print("### Deinit: SheetViewModel")
+    print("### Deinit: BuggedSheetViewModel")
   }
 }
 
@@ -64,9 +65,8 @@ struct BuggedSheetView: View {
   @ObservedObject var model: BuggedSheetViewModel
   
   var body: some View {
-    // TextField("Placeholder", text: self.$model.myText)
-    List {
-      Section("Stuff") {
+    Form {
+      Section("My Section") {
         TextField("Placeholder", text: self.$model.myText)
       }
     }

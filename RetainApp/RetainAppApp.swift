@@ -11,8 +11,8 @@ import SwiftUI
 struct RetainAppApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
-//      BuggedContentView(model: .init())
+//      ContentView()
+      BuggedContentView(model: .init())
     }
   }
 }
