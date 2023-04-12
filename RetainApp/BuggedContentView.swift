@@ -50,13 +50,13 @@ struct BuggedContentView: View {
   }
 }
 
-@MainActor
 class BuggedSheetViewModel: ObservableObject {
   
   @Published var myText = "Text"
+  @Published var id = UUID()
   
   deinit {
-    print("### Deinit: BuggedSheetViewModel")
+    print("### Deinit: BuggedSheetViewModel \(self.id.uuidString)")
   }
 }
 
@@ -68,10 +68,13 @@ struct BuggedSheetView: View {
     Form {
       Section("My Section") {
         TextField("Placeholder", text: self.$model.myText)
+        Text(self.model.id.uuidString)
       }
     }
   }
 }
+
+
 
 
 struct BuggedContentView_Previews: PreviewProvider {
